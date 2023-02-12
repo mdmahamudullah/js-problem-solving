@@ -11,12 +11,18 @@ const phones = [
 ]
 
 
-let cheapestPhone = phones.reduce((acc, curr) => {
-     if (curr.price < acc.price) {
-         return curr;
-     } else {
-         return acc;
-     }
-}, {price: Infinity});
+function cheapestPhone (phones){
+    let cheapest= phones[0];
+    for (let i = 0; i < phones.length; i++) {
+        const phone = phones[i];
+        if (phone.price < cheapest.price) {
+         cheapest=phone;
+     } 
+    }
+     
+         
+     return cheapest;
+     
+}
 
-console.log(cheapestPhone);
+console.log(cheapestPhone(phones));
