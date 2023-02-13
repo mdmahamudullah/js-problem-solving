@@ -1,4 +1,4 @@
-const phones = [
+const carts = [
     {brand: 'Apple',model: 'iPhone SE',price: 399},
     { brand: 'Samsung', model: 'Galaxy S20',price: 799},
     {brand: 'Google',model: 'Pixel 4',price: 699},
@@ -11,16 +11,13 @@ const phones = [
 ]
 
 
-function cheapestPhone (phones){
-    let cheapest= phones[0];
-    for (let i = 0; i < phones.length; i++) {
-        const phone = phones[i];
-        if (phone.price < cheapest.price) {
-         cheapest=phone;
-     } 
+function cartPrice (carts){
+    let totalPrice=0;
+    for (let i = 0; i < carts.length; i++) {
+       totalPrice=totalPrice + carts[i].price;
     }
-    return cheapest;
+    return totalPrice;
 
 }
 
-console.log(cheapestPhone(phones));
+console.log(cartPrice(carts));
